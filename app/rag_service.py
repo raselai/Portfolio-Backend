@@ -19,7 +19,7 @@ class RAGService:
         open_api_key = os.getenv("OPENAI_API_KEY")
         
         # Initialize components (similar to your current initialize_rag function)
-        loader = TextLoader("data/data.md")
+        loader = TextLoader(os.path.join(os.path.dirname(__file__), "..", "data", "data.md"))
         text_docs = loader.load()
         
         text_split = RecursiveCharacterTextSplitter(chunk_size=300, chunk_overlap=100)

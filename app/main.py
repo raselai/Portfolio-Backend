@@ -11,11 +11,11 @@ app = FastAPI()
 # Configure CORS - Updated configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # For development, you can use "*". For production, specify your domain
-    allow_credentials=True,  # Changed to False since we're using "*" for origins
-    allow_methods=["*"],  # Explicitly specify allowed methods
-    allow_headers=["*"],  # Allow all headers
-    max_age=86400,  # Cache preflight requests for 24 hours
+    allow_origins=["*"],  # Update this with your portfolio domain in production
+    allow_credentials=False,  # Set to False when using "*" for origins
+    allow_methods=["GET", "POST", "OPTIONS"],
+    allow_headers=["*"],
+    max_age=86400,
 )
 
 # Initialize RAG service
