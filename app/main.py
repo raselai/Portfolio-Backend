@@ -11,7 +11,7 @@ app = FastAPI()
 # Configure CORS - Updated configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Update this with your portfolio domain in production
+    allow_origins=["https://techbites.xyz","web-production-30a7.up.railway.app"],  # Update this with your portfolio domain in production
     allow_credentials=False,  # Set to False when using "*" for origins
     allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["*"],
